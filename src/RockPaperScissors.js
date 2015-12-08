@@ -18,8 +18,8 @@ Game.prototype.PAIRS = {
 };
 
 Game.prototype.winner = function() {
-  if(this.samePick()) { return null; }
-  else if(this.PAIRS[player1.pick]['beats'] === this.player2.pick) {
+  if(this.samePick()) return null;
+  if(this.PAIRS[this.player1.pick]['beats'] === this.player2.pick) {
     return this.player1;
   } else {
     return this.player2;
@@ -27,8 +27,6 @@ Game.prototype.winner = function() {
 };
 
 Game.prototype.samePick = function() {
-  if(this.player1.pick === this.player2.pick) {
-    return 'draw'
-  };
+  return this.player1.pick === this.player2.pick
 };
 
